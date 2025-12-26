@@ -1,0 +1,507 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== LANDING PAGE ========== */
+
+body.landing-page {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.stars-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, #1a0033 0%, #000000 100%);
+}
+
+#constellation {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.constellation-overlay {
+    opacity: 0.6;
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 0.9; }
+}
+
+/* Launch Button */
+.launch-button {
+    position: relative;
+    z-index: 10;
+    padding: 20px 50px;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #00d4ff, #0099ff);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.launch-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, #00ffff, #0077cc);
+}
+
+.launch-button:active {
+    transform: scale(0.95);
+}
+
+.rocket-icon {
+    display: inline-block;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ========== CELEBRATION PAGE ========== */
+
+body.celebration-page {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #000000, #1a0033);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-family: 'Arial', sans-serif;
+}
+
+.moon-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.moon {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle at 35% 35%, #ffff99 0%, #ffdd00 15%, #ffaa00 35%, #ff8800 60%, #ff6600 100%);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 60px rgba(255, 200, 0, 0.8),
+        0 0 100px rgba(255, 150, 0, 0.6),
+        0 0 150px rgba(255, 100, 0, 0.4),
+        inset -20px -20px 40px rgba(139, 69, 19, 0.3);
+    animation: sunGlow 3s ease-in-out infinite;
+}
+
+@keyframes sunGlow {
+    0%, 100% { 
+        box-shadow: 
+            0 0 60px rgba(255, 200, 0, 0.8),
+            0 0 100px rgba(255, 150, 0, 0.6),
+            0 0 150px rgba(255, 100, 0, 0.4),
+            inset -20px -20px 40px rgba(139, 69, 19, 0.3);
+    }
+    50% { 
+        box-shadow: 
+            0 0 80px rgba(255, 220, 0, 1),
+            0 0 130px rgba(255, 170, 0, 0.8),
+            0 0 180px rgba(255, 120, 0, 0.6),
+            inset -20px -20px 40px rgba(139, 69, 19, 0.3);
+    }
+}
+
+.moon::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, rgba(255, 150, 0, 0.4), rgba(200, 100, 0, 0.2));
+    border-radius: 50%;
+    top: 50px;
+    left: 50px;
+    filter: blur(3px);
+}
+
+.moon::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, rgba(255, 200, 0, 0.3), transparent);
+    border-radius: 50%;
+    top: 120px;
+    left: 110px;
+    filter: blur(5px);
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.stars::before,
+.stars::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 
+        100px 50px 0 white,
+        200px 100px 0 white,
+        300px 80px 0 white,
+        400px 120px 0 white,
+        500px 90px 0 white,
+        600px 110px 0 white,
+        700px 70px 0 white,
+        800px 130px 0 white,
+        900px 60px 0 white,
+        1000px 100px 0 white,
+        1100px 85px 0 white,
+        150px 200px 0 white,
+        250px 250px 0 white,
+        350px 180px 0 white,
+        450px 220px 0 white,
+        550px 190px 0 white,
+        650px 210px 0 white,
+        750px 170px 0 white,
+        850px 230px 0 white,
+        950px 160px 0 white,
+        1050px 200px 0 white;
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+/* Lunar Surface (Moon) */
+.lunar-surface {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 250px;
+    background: radial-gradient(ellipse at center bottom, #505050, #202020);
+    border-top: 3px solid #4a4a4a;
+    box-shadow: inset 0 50px 100px rgba(0, 0, 0, 0.5);
+}
+
+.crater {
+    position: absolute;
+    bottom: 20px;
+    background: radial-gradient(ellipse at 30% 30%, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    border-radius: 50%;
+}
+
+.crater-1 {
+    width: 80px;
+    height: 40px;
+    left: 10%;
+}
+
+.crater-2 {
+    width: 100px;
+    height: 50px;
+    left: 40%;
+}
+
+.crater-3 {
+    width: 60px;
+    height: 30px;
+    right: 15%;
+}
+
+/* Rocket */
+.rocket-container {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+}
+
+.rocket {
+    position: relative;
+    width: 60px;
+    height: 120px;
+    animation: rocketLand 4s ease-in forwards;
+}
+
+@keyframes rocketLand {
+    0% {
+        bottom: 500px;
+        opacity: 1;
+    }
+    90% {
+        bottom: 100px;
+        opacity: 1;
+    }
+    100% {
+        bottom: 80px;
+        opacity: 1;
+    }
+}
+
+.rocket-body {
+    position: relative;
+    width: 60px;
+    height: 100px;
+    background: linear-gradient(to right, #ff4444, #ff8888);
+    border-radius: 10px 10px 0 0;
+    margin: 0 auto;
+}
+
+.rocket-window {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #87ceeb;
+    border-radius: 50%;
+    box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.rocket-fins {
+    position: absolute;
+    bottom: -20px;
+    width: 0;
+    height: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.rocket-fins::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #ffff00, #ff9900);
+    left: -30px;
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+}
+
+.rocket-fins::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #ffff00, #ff9900);
+    right: -30px;
+    clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+}
+
+.rocket-flame {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 60px;
+    background: linear-gradient(to bottom, #ff0000, #ffff00, transparent);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    opacity: 0;
+    animation: flame 0.3s ease infinite, flameFade 4s ease forwards;
+}
+
+@keyframes flame {
+    0%, 100% { 
+        transform: translateX(-50%) scaleY(1);
+        opacity: 1;
+    }
+    50% { 
+        transform: translateX(-50%) scaleY(0.8);
+        opacity: 0.8;
+    }
+}
+
+@keyframes flameFade {
+    0% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Landing Explosion */
+.landing-explosion {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: explosion 0.8s ease-out forwards;
+    animation-delay: 3.2s;
+}
+
+@keyframes explosion {
+    0% {
+        width: 20px;
+        height: 20px;
+        background: radial-gradient(circle, #ffff00, #ff8800, #ff0000);
+        opacity: 1;
+        box-shadow: 0 0 30px rgba(255, 255, 0, 0.8);
+    }
+    100% {
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, transparent, transparent, rgba(255, 100, 0, 0.2));
+        opacity: 0;
+        box-shadow: 0 0 80px rgba(255, 100, 0, 0);
+    }
+}
+
+/* Birthday Popup */
+.birthday-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    animation: popupFadeIn 0.5s ease forwards;
+    animation-delay: 4s;
+}
+
+.birthday-popup.hidden {
+    animation: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes popupFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.popup-content {
+    position: relative;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 60px 80px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    animation: popupBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: 4s;
+}
+
+@keyframes popupBounce {
+    0% {
+        transform: scale(0) rotate(-10deg);
+    }
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+.popup-content h1 {
+    font-size: 48px;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content p {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+}
+
+.close-btn {
+    padding: 12px 40px;
+    font-size: 16px;
+    background: white;
+    color: #667eea;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn:active {
+    transform: translateY(0);
+}
+
+/* Confetti */
+.confetti {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .launch-button {
+        padding: 15px 35px;
+        font-size: 20px;
+        gap: 10px;
+    }
+
+    .moon {
+        width: 100px;
+        height: 100px;
+        top: 40px;
+        right: 30px;
+    }
+
+    .popup-content {
+        padding: 40px 50px;
+    }
+
+    .popup-content h1 {
+        font-size: 36px;
+    }
+
+    .popup-content p {
+        font-size: 18px;
+    }
+
+    .rocket {
+        width: 40px;
+        height: 80px;
+    }
+
+    .rocket-body {
+        height: 70px;
+    }
+}
